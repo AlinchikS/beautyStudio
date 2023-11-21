@@ -24,5 +24,11 @@ namespace beautyStudio
         {
             InitializeComponent();
         }
+
+        private void btnEnter_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.ServiceWindows serviceWindows = new Windows.ServiceWindows();
+            serviceWindows.Show();
+        }
     }
 }
