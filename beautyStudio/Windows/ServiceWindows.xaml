@@ -18,12 +18,12 @@
                     <ComboBoxItem IsSelected="True">Стоимость</ComboBoxItem>
                 </ComboBox>
                 <ComboBox x:Name="cmbFilterService" Height="20" Width="150"  Margin="5" SelectionChanged="cmbFilterService_SelectionChanged">
+                    <RadioButton>Все скидки</RadioButton>
                     <RadioButton>от 0 до 5%</RadioButton>
                     <RadioButton>от 5 до 15%</RadioButton>
                     <RadioButton>от 15% до 30%</RadioButton>
                     <RadioButton>от 30% до 70%</RadioButton>
                     <RadioButton>от 70% до 100%</RadioButton>
-                    <RadioButton>Все скидки</RadioButton>
                 </ComboBox>
                 <Label Content="Поиск:" Margin="5"/>
                 <TextBox x:Name="tbSearchService"  Margin="5" Height="20" Width="200" TextChanged="tbSearchService_TextChanged" />

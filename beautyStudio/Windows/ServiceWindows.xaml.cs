@@ -30,6 +30,7 @@ namespace beautyStudio.Windows
             addEditService.ShowDialog();
             dgService.ItemsSource = null;
             dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
+            this.Close();
         }
 
         private void btnEditService_Click(object sender, RoutedEventArgs e)
@@ -39,6 +40,7 @@ namespace beautyStudio.Windows
                 Service service = dgService.SelectedItem as Service;
                 Windows.AddEditServiceWindows addEditService = new Windows.AddEditServiceWindows(service);
                 addEditService.ShowDialog();
+                this.Close();
                 dgService.ItemsSource = null;
                 dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
             }
@@ -71,7 +73,7 @@ namespace beautyStudio.Windows
 
         private void cmbSortingService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            try
+            /*try
             {
                 int ind = cmbSortingService.SelectedIndex;
                 List<Service> services = App.DBbeautyStudio.Service.ToList();
@@ -87,13 +89,36 @@ namespace beautyStudio.Windows
                 dgService.ItemsSource = null;
                 dgService.ItemsSource = services;
             }
-            catch { }
+            catch { }*/
 
         }
 
         private void cmbFilterService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            /*try
+            {
+                List<Service> services = App.DBbeautyStudio.Service.ToList();
+                if (cmbFilterService.SelectedIndex == 0)
+                {
+                    dgService.ItemsSource = null;
+                    dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
+                }
+                else
+                {
+                    string selectedServices = ((RadioButton)cmbFilterService.SelectedItem).Content.ToString();
+                    List<Service> filteredServices = new List<Service>();
+                    foreach (Service service in services)
+                    {
+                        if (service.Discount.ToString() == selectedServices)
+                            filteredServices.Add(service);
+                    }
+                    dgService.ItemsSource = null;
+                    dgService.ItemsSource = filteredServices;
 
+                }
+            }
+            catch
+            { }*/
         }
     }
 }

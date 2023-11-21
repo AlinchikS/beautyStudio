@@ -29,6 +29,7 @@ namespace beautyStudio
         {
             Windows.ServiceWindows serviceWindows = new Windows.ServiceWindows();
             serviceWindows.Show();
+            this.Close();
         }
     }
 }
