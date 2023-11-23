@@ -38,10 +38,10 @@ namespace beautyStudio.Windows
         private void btnSaveService_Click(object sender, RoutedEventArgs e)
         {
             currentService.Title = tbName.Text;
-            currentService.Cost = int.Parse(tbCost.Text);
+            currentService.Cost = decimal.Parse(tbCost.Text);
             currentService.DurationInSeconds = int.Parse(tbDurationInSeconds.Text);
             currentService.Description = tbDescriptiont.Text;
-            currentService.Discount = double.Parse(tbDiscount.Text);
+            currentService.Discount = float.Parse(tbDiscount.Text);
             currentService.MainImagePath = tbMainImagePath.Text;
             if (currentService.ID == 0)
                 App.DBbeautyStudio.Service.Add(currentService);

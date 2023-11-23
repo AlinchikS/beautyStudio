@@ -19,18 +19,21 @@ namespace beautyStudio.Windows
     /// </summary>
     public partial class ServiceWindows : Window
     {
+        int rowCountAll;
+        int rowCount;
         public ServiceWindows()
         {
             InitializeComponent();
             dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
+            rowCountAll = dgService.Items.Count;
+            lbCountRow.Content = rowCountAll - 1;
         }
         private void btnAddService_Click(object sender, RoutedEventArgs e)
         {
-            Windows.AddEditServiceWindows addEditService = new Windows.AddEditServiceWindows(new Service());
-            addEditService.ShowDialog();
+            Windows.AddEditServiceWindows waService = new Windows.AddEditServiceWindows(new Service());
+            waService.ShowDialog();
             dgService.ItemsSource = null;
             dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
-            this.Close();
         }
 
         private void btnEditService_Click(object sender, RoutedEventArgs e)
@@ -38,9 +41,8 @@ namespace beautyStudio.Windows
             try
             {
                 Service service = dgService.SelectedItem as Service;
-                Windows.AddEditServiceWindows addEditService = new Windows.AddEditServiceWindows(service);
-                addEditService.ShowDialog();
-                this.Close();
+                Windows.AddEditServiceWindows waService = new Windows.AddEditServiceWindows(service);
+                waService.ShowDialog();
                 dgService.ItemsSource = null;
                 dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
             }
@@ -68,12 +70,25 @@ namespace beautyStudio.Windows
 
         private void tbSearchService_TextChanged(object sender, TextChangedEventArgs e)
         {
+            try
+            {
+                string serviceSearch = tbSearchService.Text;
+                List<Service> services = App.DBbeautyStudio.Service.Where(service => service.Title.Contains(serviceSearch) ||
+                service.Description.Contains(serviceSearch)).ToList();
 
+                dgService.ItemsSource = null;
+                dgService.ItemsSource = services;
+
+                rowCount = dgService.Items.Count;
+                lbCountRow.Content = $"{rowCount - 1} из {rowCountAll - 1}";
+
+            }
+            catch { }
         }
 
         private void cmbSortingService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            /*try
+            try
             {
                 int ind = cmbSortingService.SelectedIndex;
                 List<Service> services = App.DBbeautyStudio.Service.ToList();
@@ -89,13 +104,13 @@ namespace beautyStudio.Windows
                 dgService.ItemsSource = null;
                 dgService.ItemsSource = services;
             }
-            catch { }*/
+            catch { }
 
         }
 
         private void cmbFilterService_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            /*try
+            try
             {
                 List<Service> services = App.DBbeautyStudio.Service.ToList();
                 if (cmbFilterService.SelectedIndex == 0)
@@ -105,20 +120,35 @@ namespace beautyStudio.Windows
                 }
                 else
                 {
-                    string selectedServices = ((RadioButton)cmbFilterService.SelectedItem).Content.ToString();
-                    List<Service> filteredServices = new List<Service>();
-                    foreach (Service service in services)
-                    {
-                        if (service.Discount.ToString() == selectedServices)
-                            filteredServices.Add(service);
-                    }
-                    dgService.ItemsSource = null;
-                    dgService.ItemsSource = filteredServices;
+                    if (cmbFilterService.SelectedIndex == 1)
 
-                }
+                        services = App.DBbeautyStudio.Service.Where(service => service.Discount >= 0 && service.Discount <= 5).ToList();
+
+                    if (cmbFilterService.SelectedIndex == 2)
+
+                        services = App.DBbeautyStudio.Service.Where(service => service.Discount >= 6 && service.Discount <= 15).ToList();
+
+                    if (cmbFilterService.SelectedIndex == 3)
+
+                        services = App.DBbeautyStudio.Service.Where(service => service.Discount >= 16 && service.Discount <= 30).ToList();
+
+                    if (cmbFilterService.SelectedIndex == 4)
+
+                        services = App.DBbeautyStudio.Service.Where(service => service.Discount >= 31 && service.Discount <= 70).ToList();
+
+                    if (cmbFilterService.SelectedIndex == 5)
+
+                        services = App.DBbeautyStudio.Service.Where(service => service.Discount >= 71 && service.Discount <= 100).ToList();
+
+                    dgService.ItemsSource = null;
+                    dgService.ItemsSource = services;
+
+                    rowCount = dgService.Items.Count;
+                    lbCountRow.Content = $"{rowCount - 1} из {rowCountAll - 1}";
+                }                
             }
             catch
-            { }*/
+            { }
         }
     }
 }

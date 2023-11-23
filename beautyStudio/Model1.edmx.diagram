@@ -4,28 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c1bb9e8036fa4a7ca1f860f589b116f5" Name="Diagram1">
-        <EntityTypeShape EntityType="beautyStudioModel.Client" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.ClientService" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.DocumentByService" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.Gender" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+      <Diagram DiagramId="f3b1d570350a4388ac1f06fa020fba40" Name="Diagram1">
+        <EntityTypeShape EntityType="beautyStudioModel.Client" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.ClientService" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.DocumentByService" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.Gender" Width="1.5" PointX="1.5" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="beautyStudioModel.Manufacturer" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="beautyStudioModel.Product" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="beautyStudioModel.ProductPhoto" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="beautyStudioModel.ProductSale" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.Service" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.ServicePhoto" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="beautyStudioModel.Tag" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.Service" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.ServicePhoto" Width="1.5" PointX="7.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="beautyStudioModel.Tag" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
         <AssociationConnector Association="beautyStudioModel.FK_Client_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.FK_ClientService_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="beautyStudioModel.FK_ClientService_Service" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.FK_DocumentByService_ClientService" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.FK_ProductSale_ClientService" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.FK_Product_Manufacturer" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.FK_ProductPhoto_Product" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.FK_ProductSale_Product" ManuallyRouted="false" />
-        <AssociationConnector Association="beautyStudioModel.FK_ServicePhoto_Service" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.AttachedProduct" ManuallyRouted="false" />
         <AssociationConnector Association="beautyStudioModel.TagOfClient" ManuallyRouted="false" />
       </Diagram>

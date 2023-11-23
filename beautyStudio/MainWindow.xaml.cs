@@ -28,8 +28,8 @@ namespace beautyStudio
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
             Windows.ServiceWindows serviceWindows = new Windows.ServiceWindows();
+            Close();
             serviceWindows.Show();
-            this.Close();
         }
     }
 }
