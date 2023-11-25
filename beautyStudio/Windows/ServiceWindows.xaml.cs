@@ -150,5 +150,10 @@ namespace beautyStudio.Windows
             catch
             { }
         }
+
+        private void btnSignUpService_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

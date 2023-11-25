@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:beautyStudio.Windows"
         mc:Ignorable="d"
-        Title="ServiceWindows" Height="450" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="ServiceWindows" Height="450" Width="1200" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
                 <Button Name="btnAddService" Content="Добавить" Click="btnAddService_Click" Margin="5" Height="20" Width="64"/>
                 <Button Name="btnEditService" Content="Редактировать" Click="btnEditService_Click" Margin="5" Height="20" Width="97"/>
                 <Button Name="btnDeleteService" Content="Удалить" Click="btnDeleteService_Click" Margin="5" Height="20" Width="74"/>
+                <Button Name="btnSignUpService" Content="Записаться" Click="btnSignUpService_Click" Margin="5" Height="20" Width="74"/>
                 <ComboBox Name="cmbSortingService" Height="20" Width="180"  Margin="5" SelectionChanged="cmbSortingService_SelectionChanged">
                     <ComboBoxItem>По цене (возрастание)</ComboBoxItem>
                     <ComboBoxItem>По цене (убывание)</ComboBoxItem>
