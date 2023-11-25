@@ -153,7 +153,18 @@ namespace beautyStudio.Windows
 
         private void btnSignUpService_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                Service service = dgService.SelectedItem as Service;
+                Windows.AddEditClientServiceWindow waClient= new Windows.AddEditClientServiceWindow(service);
+                waClient.ShowDialog();
+                dgService.ItemsSource = null;
+                dgService.ItemsSource = App.DBbeautyStudio.Service.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Выберите объект для записи");
+            }
         }
     }
 }

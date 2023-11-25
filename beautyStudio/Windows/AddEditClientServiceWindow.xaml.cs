@@ -19,9 +19,11 @@ namespace beautyStudio.Windows
     /// </summary>
     public partial class AddEditClientServiceWindow : Window
     {
-        public AddEditClientServiceWindow()
+        public AddEditClientServiceWindow(Service currentService)
         {
             InitializeComponent();
+            this.currentService = currentService;
         }
+        Service currentService;
     }
 }
